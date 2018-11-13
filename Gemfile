@@ -42,6 +42,13 @@ gem 'bootstrap', '4.1.1'
 gem 'material-sass', '~> 4.1', '>= 4.1.1'
 gem 'pundit', '~> 2.0'
 
+# use devise for user auth
+gem 'devise', '~> 4.5'
+gem 'omniauth', '~> 1.8', '>= 1.8.1'
+gem 'omniauth-facebook', '~> 5.0'
+gem 'omniauth-github', '~> 1.3'
+gem 'omniauth-google-oauth2', '~> 0.2.2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
