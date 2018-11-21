@@ -1,4 +1,5 @@
 class SitepropsController < ApplicationController
+  before_action :is_user_admin?
   def index
   end
 
@@ -36,6 +37,15 @@ class SitepropsController < ApplicationController
 
   def siteprop_params
     params.require(:siteprop).permit(:title, :landingheader, :landingcontent)
+  end
+
+  def is_user_admin?
+    if current_user && current_user.admin?
+      :authenticate_user!
+    else
+      flash[:alert] = "sorry you have to have admin rights for that one"
+      redirect_to landing_index_path
+    end
   end
 
 end
