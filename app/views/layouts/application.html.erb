@@ -12,9 +12,9 @@
   <body>
     <div class="container">
       <header class="text-center">
-        <h1>Ruby On Rails Developer Application</h1>
+        <h1><%= @siteprop.title %></h1>
         <% if current_user && current_user.admin? %>
-          edit this stuff
+          <%= link_to "Edit Site Props", edit_siteprop_path(@siteprop.id) %>
         <% end %>
       </header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

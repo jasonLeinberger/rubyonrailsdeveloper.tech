@@ -1,0 +1,2 @@
+class Siteprop < ApplicationRecord
+end
