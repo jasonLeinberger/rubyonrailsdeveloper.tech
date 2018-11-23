@@ -11,6 +11,19 @@
         <%= form.label :landingcontent %>
         <%= form.text_area :landingcontent, class: 'form-control' %>
     </div>
+    <div class="form-group">
+        <%= form.label :about_header %>
+        <%= form.text_field :about_header, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= form.label :about_content %>
+        <%= form.text_area :about_content, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= form.label :about_image %>
+        <%= form.file_field :about_image, class: 'form-control' %>
+    </div>
+
     <div class="actions">
         <%= form.submit "Save", class: 'btn btn-primary' %>
     </div>

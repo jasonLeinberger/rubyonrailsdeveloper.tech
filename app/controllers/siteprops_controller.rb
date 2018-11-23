@@ -36,7 +36,7 @@ class SitepropsController < ApplicationController
   private 
 
   def siteprop_params
-    params.require(:siteprop).permit(:title, :landingheader, :landingcontent)
+    params.require(:siteprop).permit(:title, :landingheader, :landingcontent, :about_header, :about_content, :about_image)
   end
 
   def is_user_admin?

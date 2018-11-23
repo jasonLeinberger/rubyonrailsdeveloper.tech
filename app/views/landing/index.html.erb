@@ -1,5 +1,20 @@
-<h2> <%= sanitize @siteprop.landingheader %> </h2>
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+        <h2> <%= sanitize @siteprop.landingheader %> </h2>
 
-<section>
-    <%= sanitize @siteprop.landingcontent %>
-</section>
+        <section>
+            <%= sanitize @siteprop.landingcontent %>
+        </section>
+        </div>
+        <div class="col-4 border">
+            <% if @siteprop.about_image.attached? %>
+                <%= image_tag @siteprop.about_image.variant(resize: "200x200") %>
+            <% end %>
+            <h2> <%= sanitize @siteprop.about_header %> </h2>
+            <section>
+                <%= sanitize @siteprop.about_content %>
+            </section>
+        </div>
+    </div>
+</div>
