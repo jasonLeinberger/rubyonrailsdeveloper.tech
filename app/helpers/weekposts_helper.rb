@@ -1,0 +1,2 @@
+module WeekpostsHelper
+end

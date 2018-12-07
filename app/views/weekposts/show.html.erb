@@ -1,0 +1,12 @@
+<h3>Week #<%= @weekpost.weeknumber %>: <%= @weekpost.title %></h3>
+
+<section>
+    <%= sanitize @weekpost.notes %>
+</section>
+
+<section>
+    <% if current_user && current_user.admin %>
+        <%= link_to "edit", edit_weekpost_path %>
+        <%= link_to "delete", @weekpost, method: :delete %>
+    <% end %>
+</section>

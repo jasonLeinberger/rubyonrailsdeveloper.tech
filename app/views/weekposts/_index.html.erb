@@ -1,0 +1,10 @@
+<% if current_user && current_user.admin %>
+    <%= link_to "New Week Post", new_weekpost_path, class: 'btn btn-primary' %>
+<% end %>
+<ul class="list-unstyled">
+    <% @weekposts.each do |post| %>
+        <li>
+            <h2> <%= link_to "Week ##{post.weeknumber}: #{post.title}", post, class: "text-black"%> </h2>
+        </li>
+    <% end %>
+</ul>

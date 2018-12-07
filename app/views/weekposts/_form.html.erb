@@ -1,0 +1,31 @@
+<%= form_for @weekpost do |form| %>
+    <div class="form-group">
+        <%= form.label :title %>
+        <%= form.text_field :title, class: 'form-control'%>
+    </div>
+    <div class="form-group">
+        <%= form.label :weeknumber %>
+        <%= form.text_field :weeknumber, class: 'form-control'%>
+    </div>
+    <div class="form-group">
+        <%= form.label :notes %>
+        <%= form.text_area :notes, class: 'form-control'%>
+    </div>
+    <div class="form-group">
+        <%= form.label :wireframes %>
+        <%= form.file_field :wireframes, multiple: true, class: 'form-control'%>
+    </div>
+    <div class="actions">
+        <%= form.submit "save", class: 'btn btn-primary' %>
+    </div>
+<% end %>
+<h2>Attached Wireframes:</h2>
+<% if @weekpost.wireframes.attached? %>
+    <ul class="list-unstyled">
+    <% @weekpost.wireframes.each do |image| %>
+        <li>
+            <%= image.filename %> : <%= button_to "delete", {controller: :weekposts, action: 'delete_image_attachment', id: image.id, post_id: @weekpost.id}, method: :delete_image_attachment %>
+        </li>
+    <% end %>
+    </ul>
+<% end %>
