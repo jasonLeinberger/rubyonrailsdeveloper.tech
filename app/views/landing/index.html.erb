@@ -11,9 +11,11 @@
         </section>
         </div>
         <div class="col-4 border">
+            <div class="d.block text-center">
             <% if @siteprop.about_image.attached? %>
-                <%= image_tag @siteprop.about_image.variant(resize: "200x200") %>
+                <%= image_tag @siteprop.about_image, class: "img-responsive" %>
             <% end %>
+            </div>
             <h2> <%= sanitize @siteprop.about_header %> </h2>
             <section>
                 <%= sanitize @siteprop.about_content %>

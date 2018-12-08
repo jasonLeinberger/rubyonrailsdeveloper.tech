@@ -1,10 +1,13 @@
+<div class="container h-100 bg-light">
 <% if current_user && current_user.admin %>
     <%= link_to "New Week Post", new_weekpost_path, class: 'btn btn-primary' %>
 <% end %>
-<ul class="list-unstyled">
+<h2> Weekly progress:</h2>
+<ul class="list-unstyled list-group">
     <% @weekposts.each do |post| %>
         <li>
-            <h2> <%= link_to "Week ##{post.weeknumber}: #{post.title}", post, class: "text-black"%> </h2>
+            <h2> <%= link_to "Week ##{post.weeknumber}: #{post.title}", post, class: "text-black list-group-item"%> </h2>
         </li>
     <% end %>
 </ul>
+</div>

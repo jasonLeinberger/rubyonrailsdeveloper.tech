@@ -17,4 +17,13 @@
 //= require material
 //= require activestorage
 //= require turbolinks
+//= require jquery.flexslider
 //= require_tree .
+
+$(document).on("turbolinks:load", function() {
+    $('.flexslider').flexslider({
+      controlNav: true,
+      directionNav: true
+    });
+    
+  });

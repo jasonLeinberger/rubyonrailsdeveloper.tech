@@ -4,6 +4,17 @@
     <%= sanitize @weekpost.notes %>
 </section>
 
+<section class="flexslider">
+    <% if @weekpost.wireframes.attached? %>
+        <ul class="slides">
+            <% @weekpost.wireframes.each do |image| %>
+                <li>
+                    <%= image_tag image, class: 'img-responsive' %>
+                </li>
+            <% end %>
+        </ul>
+    <% end %>
+</section>
 <section>
     <% if current_user && current_user.admin %>
         <%= link_to "edit", edit_weekpost_path %>
