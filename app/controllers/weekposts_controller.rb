@@ -1,6 +1,8 @@
 class WeekpostsController < ApplicationController
   before_action :findweekpost, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  skip_before_action :verify_authenticity_token, only: [:delete_image_attachment]
+
   def index
     @weekposts = Weekpost.all
   end
