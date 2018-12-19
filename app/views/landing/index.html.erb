@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-8">
+        <div class="col col-8">
         <h2> <%= sanitize @siteprop.landingheader %> </h2>
 
         <section>
@@ -10,7 +10,7 @@
             </div>
         </section>
         </div>
-        <div class="col-4 border">
+        <div class="col-4 border d-none d-lg-block"  >
             <div class="d.block text-center">
             <% if @siteprop.about_image.attached? %>
                 <%= image_tag @siteprop.about_image, class: "img-responsive" %>
